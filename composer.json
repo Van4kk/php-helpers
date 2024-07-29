@@ -1,19 +1,25 @@
 {
     "name": "van4kk/php-helpers",
     "description": "A bunch of php helper functions that will make your life easier",
+    "keywords": ["PHP","Helpers","Helper"],
     "type": "library",
     "license": "MIT",
     "autoload": {
         "psr-4": {
             "Van4kk\\PhpHelpers\\": "src/"
-        }
+        },
+        "files": [
+            "src/helpers.php"
+        ]
     },
     "authors": [
         {
-            "name": "Ionuț - Nicu",
-            "email": "65396868+Van4kk@users.noreply.github.com"
+            "name": "Cucu Ionuț - Nicu",
+            "email": "cucuionutnicu@yahoo.com"
         }
     ],
     "minimum-stability": "stable",
-    "require": {}
+    "require": {
+        "php": "^8.0.0 || ^8.1.0 || ^8.2.0 || ^8.3.0"
+    }
 }
