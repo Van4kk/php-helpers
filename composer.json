@@ -1,0 +1,19 @@
+{
+    "name": "van4kk/php-helpers",
+    "description": "A bunch of php helper functions that will make your life easier",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Van4kk\\PhpHelpers\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ionuț - Nicu",
+            "email": "65396868+Van4kk@users.noreply.github.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
