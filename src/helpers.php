@@ -214,3 +214,45 @@ if (!function_exists('array_all')) {
         return true;
     }
 }
+
+if (!function_exists('format_memory')) {
+    /**
+     * The function converts a memory size in bytes to a human-readable format.
+     * 
+     * This function will return a string representing the memory size in a more readable format
+     * such as KB, MB, GB, etc., depending on the size of the input in bytes. 
+     * 
+     * @param int $bytes The size in bytes that needs to be formatted.
+     * @return string The formatted memory size as a string with appropriate units.
+     *
+     * <code>
+     * <?php
+     * // Example usage:
+     * 
+     * // Convert 500 bytes to a human-readable format.
+     * echo format_memory_bytes(500); // Output: "500 B"
+     * 
+     * // Convert 12724 bytes to a human-readable format.
+     * echo format_memory_bytes(12724); // Output: "12.42 KB"
+     * 
+     * // Convert 1048576 bytes (1 MB) to a human-readable format.
+     * echo format_memory_bytes(1048576); // Output: "1.00 MB"
+     * 
+     * // Convert 1073741824 bytes (1 GB) to a human-readable format.
+     * echo format_memory_bytes(1073741824); // Output: "1.00 GB"
+     * ?>
+     * </code>
+     */
+    function format_memory(int $bytes): string
+    {
+        if ($bytes < 1024) {
+            return $bytes . ' B';
+        }
+        
+        $units = ['B', 'KB', 'MB', 'GB', 'TB', 'PB'];
+        $i = floor(log($bytes, 1024));
+        $size = $bytes / pow(1024, $i);
+        
+        return sprintf('%.2f %s', $size, $units[$i]);
+    }
+}
